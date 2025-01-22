@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us</title>
+    <style>
+      html,
+      body,
+      div,
+      span,
+      applet,
+      object,
+      iframe,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      p,
+      blockquote,
+      pre,
+      a,
+      abbr,
+      acronym,
+      address,
+      big,
+      cite,
+      code,
+      del,
+      dfn,
+      em,
+      img,
+      ins,
+      kbd,
+      q,
+      s,
+      samp,
+      small,
+      strike,
+      strong,
+      sub,
+      sup,
+      tt,
+      var,
+      b,
+      u,
+      i,
+      center,
+      dl,
+      dt,
+      dd,
+      ol,
+      ul,
+      li,
+      fieldset,
+      form,
+      label,
+      legend,
+      table,
+      caption,
+      tbody,
+      tfoot,
+      thead,
+      tr,
+      th,
+      td,
+      article,
+      aside,
+      canvas,
+      details,
+      embed,
+      figure,
+      figcaption,
+      footer,
+      header,
+      hgroup,
+      menu,
+      nav,
+      output,
+      ruby,
+      section,
+      summary,
+      time,
+      mark,
+      audio,
+      video {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        font: inherit;
+        vertical-align: baseline;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      .flex-row {
+        display: flex;
+        flex-direction: row;
+      }
+      .flex-col {
+        display: flex;
+        flex-direction: column;
+      }
+      .justify-start {
+        display: flex;
+        justify-content: flex-start;
+      }
+      .justify-center {
+        display: flex;
+        justify-content: center;
+      }
+      .justify-end {
+        display: flex;
+        justify-content: flex-end;
+      }
+      .justify-between {
+        display: flex;
+        justify-content: space-between;
+      }
+      .items-start {
+        display: flex;
+        align-items: flex-start;
+      }
+      .items-end {
+        display: flex;
+        align-items: flex-end;
+      }
+      .items-center {
+        display: flex;
+        align-items: center;
+      }
+      .no-shrink {
+        flex-shrink: 0;
+      }
+
+      .container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding-right: 48px;
+        padding-left: 48px;
+        z-index: 0;
+        overflow: hidden;
+        background-color: #ffffff;
+        position: relative;
+        height: auto;
+        min-height: 100%;
+      }
+
+      .header {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 16px;
+        padding-bottom: 16px;
+        flex-shrink: 0;
+        align-self: stretch;
+        z-index: 3;
+        background-color: #ffffff;
+      }
+
+      .logo {
+        height: 48px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        flex-shrink: 0;
+        font-size: 42px;
+        font-family: DotGothic16;
+        font-weight: 400;
+        line-height: 100%;
+        letter-spacing: -0.04em;
+        color: #000000;
+        white-space: pre;
+        padding-top: 0;
+        padding-right: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: flex-start;
+        gap: 32px;
+        flex-shrink: 0;
+        position: relative;
+      }
+
+      .nav-link {
+        flex-shrink: 0;
+        font-size: 28px;
+        font-family: DotGothic16;
+        font-weight: 400;
+        line-height: 32px;
+        letter-spacing: -0.01em;
+        color: #000000;
+        white-space: pre;
+      }
+
+      .divider {
+        width: 100%;
+        height: 1px;
+        position: absolute;
+        top: auto;
+        left: -48px;
+        flex-shrink: 0;
+        margin-left: 32px;
+        margin-top: -0.5px;
+        margin-right: 32px;
+        margin-bottom: -0.5px;
+        right: -48px;
+        bottom: -0.5px;
+      }
+
+      .main-section {
+        display: flex;
+        align-items: flex-start;
+        padding-top: 48px;
+        padding-bottom: 48px;
+        z-index: 2;
+        flex-shrink: 0;
+        align-self: stretch;
+        position: relative;
+      }
+
+      .content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        z-index: 1;
+        flex-grow: 1;
+        width: 0;
+        position: relative;
+      }
+
+      .about {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding-top: 48px;
+        padding-bottom: 48px;
+        flex-shrink: 0;
+        align-self: stretch;
+        z-index: 8;
+        background-color: #ffffff;
+      }
+
+      .about-title {
+        flex-shrink: 0;
+        align-self: stretch;
+        font-size: 120px;
+        font-family: DotGothic16;
+        font-weight: 400;
+        line-height: 180px;
+        letter-spacing: -0.02em;
+        color: #000000;
+        white-space: pre;
+        height: 180px;
+        margin-top: -30px;
+        margin-bottom: -30px;
+      }
+
+      .about-text {
+        flex-shrink: 0;
+        align-self: stretch;
+        text-align: center;
+        font-size: 24px;
+        font-family: Archivo;
+        font-weight: 400;
+        line-height: 32px;
+        letter-spacing: -0.005em;
+        color: #000000;
+        white-space: pre;
+        height: auto;
+        margin-top: -30px;
+        margin-bottom: -30px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .footer {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding-top: 96px;
+        padding-bottom: 24px;
+        gap: 24px;
+        flex-shrink: 0;
+        align-self: stretch;
+        z-index: 1;
+        overflow: hidden;
+        background-color: #ffffff;
+        position: relative;
+      }
+
+      .footer-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-shrink: 0;
+        align-self: stretch;
+        position: relative;
+      }
+
+      .footer-text {
+        display: flex;
+        align-items: flex-start;
+        gap: 32px;
+        flex-shrink: 0;
+        font-size: 28px;
+        font-family: DotGothic16;
+        font-weight: 400;
+        line-height: 32px;
+        letter-spacing: -0.01em;
+        color: #000000;
+        white-space: pre;
+        padding-top: 0;
+        padding-right: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+      }
+
+      .footer-link {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 11px;
+        padding-right: 23px;
+        padding-bottom: 11px;
+        padding-left: 23px;
+        flex-shrink: 0;
+        border-radius: 8px;
+        border-width: 1px;
+        border-style: solid;
+        border-color: #000000;
+        font-size: 20px;
+        font-family: 'Archivo Narrow';
+        font-weight: 500;
+        line-height: 24px;
+        color: #000000;
+        white-space: pre;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <span class="logo">Creatify</span>
+        <div class="nav-links"><span class="nav-link">Home</span><span class="nav-link">About</span><span class="nav-link">Projects</span><span class="nav-link">Contact</span></div>
+        <img
+          class="divider"
+          src="https://seal-img.nos-jd.163yun.com/obj/w5rCgMKVw6DCmGzCmsK-/57801561765/1f13/9527/8b7a/a38a2c3425acc009dedb3cf9bfce762d.svg" />
+      </div>
+      <div class="main-section">
+        <div class="content">
+          <div class="about">
+            <span class="about-title">About Us</span>
+            <span class="about-text">We are a leading digital solutions company dedicated to providing innovative and effective strategies tailored to your unique needs. Our team of experts is committed to delivering exceptional results and helping businesses thrive in the digital age.</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer">
+        <div class="footer-content"><span class="footer-text">© 2023 Creatify</span><span class="footer-link">Contact Us</span></div>
+      </div>
+    </div>
+  </body>
+</html>
